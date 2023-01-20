@@ -1,0 +1,20 @@
+<div class="container">
+    <p>
+        <button
+            type="button"
+            class="btn btn-outline-light btn-sm"
+            (click)="collapse.toggle()"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample"
+        >
+        <span class="material-icons">
+            help_outline
+            </span>
+        </button>
+    </p>
+    <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+        <div class="card col-md-6">
+            <div class="card-body">Purchases over R$ 300 reais have free shipping!!</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div *ngFor="let product of produtos" class="col-md-2" style="margin-left: 80px;">
+    <div  class="card">
+        <img src="../src/assets/img.3jpg" class="img-thumbnail" width="200px" height="200px">
+        <div class="card-body">
+            <h5 class="card-title">1</h5>
+            <p class="card-text fw-bolder" name="price">R$ {{product.price}} </p>
+            <button type="button" class="btn btn-outline-success col-md-12">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div> 

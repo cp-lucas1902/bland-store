@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/main">Bland Store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/promotion">Promotion</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/more" tabindex="-1" aria-disabled="true">More</a>
+        </li>
+      </ul>
+
+    <!-- CARRINHO -->
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <a class="btn btn-outline-success btn-sm" type="submit"><span class="material-icons">
+            search
+          </span></a>
+
+
+        <!--MINI CARRINHO-->
+        <ng-template #content let-offcanvas>
+          <div class="offcanvas-header">
+            <h4 class="offcanvas-title">Selected Purchases</h4>
+            <button type="button" class="btn-close" aria-label="Close"
+              (click)="offcanvas.dismiss('Cross click')"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>IPHONE</td>
+                    <td class="text-center"><button type="button" class="btn btn-Light">-</button>
+                      <span class="badge bg-secondary" id="soma">0</span>
+                      <button type="button" class="btn btn-Light">+</button>
+                    </td>
+                    <td>100</td>
+                    <td><button type="button" class="btn btn-outline-danger btn-sm">
+                        <span class="material-icons">
+                          delete
+                        </span>
+                      </button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="text-end">
+              <button type="button" class="col-md-12 btn btn-outline-success "
+                (click)="offcanvas.close('Close click')">Buy</button>
+            </div>
+          </div>
+        </ng-template>
+        
+        <!-- LOGIN -->
+        <a routerLink="/login" class="btn btn-outline-light btn-sm" style="margin-left: 10px;"  type="submit"><span class="material-icons">
+            account_circle
+          </span></a>
+
+        
+        <!-- CARRINHO -->
+        <a type="button"  style="margin-left: 10px;"
+          class="btn btn-lg btn-outline-light position-relative btn-sm" (click)="openEnd(content)">
+          <span class="material-icons">
+            shopping_cart
+          </span>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            99+
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </a>
+      </form>
+    </div>
+  </div>
+</nav>

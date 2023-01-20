@@ -1,0 +1,95 @@
+<div class="col-md-12 bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <ng-template #content let-offcanvas>
+                    <div class="offcanvas-header">
+                        <h4 class="offcanvas-title" id="offcanvas-basic-title">Carrinho</h4>
+                        <button type="button" class="btn-close" aria-label="Close"
+                            (click)="offcanvas.dismiss('Cross click')"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="container">
+                            <div class="row">
+                                <!-- TABLE -->
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">Product</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">ID</th>
+                                            <td>NAME</td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn btn-Light">-</button>
+                                                <span class="badge bg-secondary" id="soma">0</span>
+                                                <button type="button" class="btn btn-Light">+</button>
+                                            </td>
+                                            <td>
+                                                <p class="fw-bold">R$ 00</p>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <h5 class="offcanvas-title" id="offcanvas-basic-title">Total: R$ 0 </h5>
+                        <br />
+                        <div class="text-end">
+                            <button type="button" class="btn btn-outline-success col-md-12"
+                                (click)="offcanvas.close('Save click')">Buy</button>
+                        </div>
+                    </div>
+                </ng-template>
+
+                <!-- CARROCEL -->
+                <div class="container text-center">
+                    <app-carousel></app-carousel>
+                </div>
+
+                <hr class="col-md-12">
+
+                <div class="card-group text-center">
+                    <div class="container bg-danger">
+                        <div class="row">
+                            FUNCIONA PORRA
+                            <app-predicted-products></app-predicted-products>
+                        </div>
+                    </div>
+                </div>
+                <hr class="col-md-12">
+
+                <div class="card text-center">
+                    <div class="card-header">
+                        Promotion
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">Register your email to receive more information.</p>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                        <app-modal-promotion></app-modal-promotion>
+                    </div>
+                </div>
+
+                <hr class="col-md-12">
+
+                <div class="col-md-12">
+                    <app-collapse></app-collapse>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
