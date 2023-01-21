@@ -1,5 +1,5 @@
 import { ServicosService } from './../../service/servicos.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.css']
 })
-export class PanelComponent {
+export class PanelComponent implements OnInit{
   constructor(private router: Router, private service: ServicosService){}
 
   public carrinho: Array<any> =  new Array();

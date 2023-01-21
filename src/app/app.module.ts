@@ -18,6 +18,9 @@ import { PromotionComponent } from './components/promotion/promotion.component';
 import { MoreComponent } from './components/more/more.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CartComponent } from './components/cart/cart.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { RegisterComponent } from './components/register/register.component';
     PromotionComponent,
     MoreComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CartComponent,
+    PaginationComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,9 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class ServicosService {
+  getValue(): any {
+      throw new Error('Method not implemented.');
+  }
 
   private SERVE_URL = "http://localhost:3000/produtos";
 
