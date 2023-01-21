@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PromotionComponent } from './components/promotion/promotion.component';
 import { MoreComponent } from './components/more/more.component';
 import { LoginComponent } from './components/login/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LoginComponent } from './components/login/login/login.component';
     ModalPromotionComponent,
     PromotionComponent,
     MoreComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { ServicosService } from './../../service/servicos.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,5 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router, private service: ServicosService){}
+
+  public carrinho: Array<any> =  new Array();
+  
+  ngOnInit(){}
 }

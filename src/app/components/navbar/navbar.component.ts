@@ -1,4 +1,5 @@
-import { Component, TemplateRef } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -6,10 +7,13 @@ import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
   closeResult: string | undefined;
 
-	constructor(private offcanvasService: NgbOffcanvas) {}
+	constructor(private offcanvasService: NgbOffcanvas, private router:Router) {}
+	ngOnInit(): void {
+		throw new Error('Method not implemented.');
+	}
 
 	openEnd(content: TemplateRef<any>) {
 		this.offcanvasService.open(content, { position: 'end' });
@@ -50,4 +54,8 @@ export class NavbarComponent {
 	openCustomPanelClass(content: TemplateRef<any>) {
 		this.offcanvasService.open(content, { panelClass: 'bg-info' });
 	}
+
+	goToLogin() {
+        this.router.navigate(['/login']);
+    }
 }

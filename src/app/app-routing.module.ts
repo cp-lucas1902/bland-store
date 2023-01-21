@@ -1,3 +1,4 @@
+import { RegisterComponent } from './components/register/register.component';
 import { MoreComponent } from './components/more/more.component';
 import { PromotionComponent } from './components/promotion/promotion.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,8 @@ const routes: Routes = [
   { path: 'promotion', component: PromotionComponent },
   { path: 'more', component: MoreComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  
 ];
 
 @NgModule({

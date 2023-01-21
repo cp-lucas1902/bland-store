@@ -1,0 +1,39 @@
+{
+  "produtos": [
+      {
+          "id": 1,
+          "nome": "Camiseta Bland",
+          "price": 100,
+          "qtItem": 0,
+          "Tamanho": "G",
+          "imagem": "../src/assets/img.3jpg"
+      },
+      {
+          "id": 2,
+          "nome": "Bone Bland",
+          "price": 100,
+          "qtItem": 0,
+          "Tamanho": "Unico",
+          "imagem": "../src/assets/img.3jpg"
+      }
+      ,
+      {
+          "id": 3,
+          "nome": "Bolsa Bland",
+          "price": 300,
+          "qtItem": 0,
+          "Tamanho": "Unico",
+          "imagem": "../src/assets/img.3jpg"
+      }
+  ],
+  "comments": [
+      {
+          "id": 1,
+          "body": "some comment",
+          "postId": 1
+      }
+  ],
+  "profile": {
+      "name": "admin"
+  }
+}

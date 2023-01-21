@@ -7,21 +7,20 @@ import { Router } from '@angular/router';
   templateUrl: './predicted-products.component.html',
   styleUrls: ['./predicted-products.component.css']
 })
-export class PredictedProductsComponent implements OnInit{
-     
-    produtos: Array<any> = new Array();
+export class PredictedProductsComponent implements OnInit {
 
-     constructor(private seriveProduto: ServicosService,private router: Router){}
-     
-     ngOnInit(){
-        this.seriveProduto.listaProdutos();
-     }
+  constructor(private seriveProduto: ServicosService, private router: Router) { }
+ 
+  public produtos: Array<any> = new Array();
 
-    listaProdutos(){
-        this.seriveProduto.listaProdutos().subscribe(produtos =>{
-          this.produtos = produtos;
-        }, err =>{
-          console.log('Erro Lista de Produtos', err);
-        })
-     }
+  ngOnInit() {
+    this.seriveProduto.get();
+    this.listaProdutos();
+  }
+
+  listaProdutos():void {
+    this.seriveProduto.get().subscribe((data: any[])=>{  
+			this.produtos = data;  
+		})
+  }
 }
