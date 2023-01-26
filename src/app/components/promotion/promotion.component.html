@@ -10,36 +10,17 @@
         <!-- COMPRAS -->
         <div class="container col-md-12">
             <div class="row align-items-center" style="padding-top: 10px;">
-                <div class="card col-md-3" style="margin-left: 70px;">
-                    <img src="../../../assets/img/33.PNG" class="img-thumbnail" width="200px" height="200px">
+                <div class="card col-md-3" style="margin-left: 70px;" *ngFor="let item of produtos">
+                    <img src="{{item.imagens}}" class="img-thumbnail" width="200px" height="200px">
                     <div class="card-body">
-                        <a routerLink="/product"> <h5 class="card-title">camiseta</h5></a>
-                        <p class="card-text fw-bolder" name="price">R$ 0 </p>
+                        <a routerLink="/product"> <h5 class="card-title">{{item.name}}</h5></a>
+                        <p class="card-text fw-bolder" name="price">R$ {{item.price}} </p>
                         <button type="button" class="btn btn-outline-success col-md-12">
                             Add to Cart
                         </button>
                     </div>
                 </div>
-                <div class="card col-md-3" style="margin-left: 70px;">
-                    <img src="../../../assets/img/33.PNG" class="img-thumbnail" width="200px" height="200px">
-                    <div class="card-body">
-                       <a routerLink="/product"> <h5 class="card-title">camiseta</h5></a>
-                        <p class="card-text fw-bolder" name="price">R$ 0 </p>
-                        <button type="button" class="btn btn-outline-success col-md-12">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-                <div class="card col-md-3" style="margin-left: 70px;">
-                    <img src="../../../assets/img/33.PNG" class="img-thumbnail" width="200px" height="200px">
-                    <div class="card-body">
-                        <a routerLink="/product"> <h5 class="card-title">camiseta</h5></a>
-                        <p class="card-text fw-bolder" name="price">R$ 0 </p>
-                        <button type="button" class="btn btn-outline-success col-md-12">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
+
             </div>
         </div>
         <!-- FIM COMPRAS -->

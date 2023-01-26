@@ -1,44 +1,46 @@
+import { ProductModel } from 'src/app/model/productmodel.model';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import { catchError, Observable, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicosService {
-  getValue(): any {
-      throw new Error('Method not implemented.');
-  }
+  
+
+  constructor(private http:HttpClient) { }
 
   private SERVE_URL = "http://localhost:3000/produtos";
 
-  constructor(private http:HttpClient) { }
+  listcarrinho: ProductModel[] = [];
+
+  getTotal() {
+    throw new Error('Method not implemented.');
+  }
+ 
+  getValue(): any {
+      throw new Error('Method not implemented.');
+  }
 
   get():Observable<any>{
     return this.http.get(this.SERVE_URL);
   }
 
-  listaProdutosCarrinho(){
-    
+  getProducts(){
+    return this.http.get(`${this.SERVE_URL}itens`)
   }
 
-  addItemCarrinho(){}
-  removetemCarrinho(){}
-
-  handleError(error: HttpErrorResponse) {
-    let errorMessage = 'Unknown error!';
-    if (error.error instanceof ErrorEvent) {
-      // Client-side errors
-      errorMessage = `Error: ${error.error.message}`;
-    } else {
-      // Server-side errors
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
+  //ADICIONA PRODUTO NO CARRINHO
+  addProducts(product:ProductModel):Observable<any>{
+     return this.http.post("http://localhost:3000/produtos", product);
   }
 
-  public sendGetRequest(){
-    return this.http.get(this.SERVE_URL).pipe(catchError(this.handleError)); 
-  }
+
+
+ 
+  
+
+ 
 }
