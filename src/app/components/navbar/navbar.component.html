@@ -32,7 +32,7 @@
         </li>
       </ul>
 
-    <!-- CARRINHO -->
+      <!-- CARRINHO -->
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <a class="btn btn-outline-success btn-sm" type="submit"><span class="material-icons">
@@ -60,22 +60,26 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>IPHONE</td>
-                    <td class="text-center"><button type="button" class="btn btn-Light">-</button>
-                      <span class="badge bg-secondary" id="soma">0</span>
-                      <button type="button" class="btn btn-Light">+</button>
+                  <tr *ngFor="let item of carrinhoMostra">
+                    <th scope="row"></th>
+                    <td>{{item.name}}</td>
+                    <td class="text-center">
+                      <button type="button" class="btn btn-Light" (mouseup)="MaxOrMin(-1)">-</button>
+                      <span class="badge bg-secondary">{{this.count}}</span>
+                      <button type="button" class="btn btn-Light" (mouseup)="MaxOrMin(1)">+</button>
                     </td>
-                    <td>100</td>
-                    <td><button type="button" class="btn btn-outline-danger btn-sm">
+                    <td>{{item.price}}</td>
+                    <td><button type="button" class="btn btn-outline-danger btn-sm" (mouseup)="getListCart()"
+                        (click)="removeItemCarrinho(item)">
                         <span class="material-icons">
                           delete
                         </span>
                       </button></td>
                   </tr>
+                  
                 </tbody>
               </table>
+              <div class="fw-bolder" style="margin: 10px;"> Total: R$ {{total}}</div>
             </div>
             <div class="text-end">
               <button type="button" class="col-md-12 btn btn-outline-success "
@@ -83,21 +87,22 @@
             </div>
           </div>
         </ng-template>
-        
+
         <!-- LOGIN -->
-        <a routerLink="/login" class="btn btn-outline-light btn-sm" style="margin-left: 10px;"  type="submit"><span class="material-icons">
+        <a routerLink="/login" class="btn btn-outline-light btn-sm" style="margin-left: 10px;" type="submit"><span
+            class="material-icons">
             account_circle
           </span></a>
 
-        
+
         <!-- CARRINHO -->
-        <a type="button"  style="margin-left: 10px;"
+        <a type="button" style="margin-left: 10px;" (mouseup)="getListCart()" (mouseup)="getTotal(0)"
           class="btn btn-lg btn-outline-light position-relative btn-sm" (click)="openEnd(content)">
           <span class="material-icons">
             shopping_cart
           </span>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            99+
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" >
+            {{qtItens}}+
             <span class="visually-hidden">unread messages</span>
           </span>
         </a>

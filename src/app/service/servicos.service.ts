@@ -14,7 +14,7 @@ export class ServicosService {
 
   private SERVE_URL = "http://localhost:3000/produtos";
 
-  listcarrinho: ProductModel[] = [];
+  
 
   getTotal() {
     throw new Error('Method not implemented.');
@@ -32,15 +32,4 @@ export class ServicosService {
     return this.http.get(`${this.SERVE_URL}itens`)
   }
 
-  //ADICIONA PRODUTO NO CARRINHO
-  addProducts(product:ProductModel):Observable<any>{
-     return this.http.post("http://localhost:3000/produtos", product);
-  }
-
-
-
- 
-  
-
- 
 }

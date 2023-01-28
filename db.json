@@ -11,7 +11,7 @@
       },
       {
         "codigoItem": 2,
-        "name": "Camiseta",
+        "name": "Camiseta 2",
         "price": 200,
         "quantidade": 1,
         "categoria": "camiseta",
@@ -20,7 +20,7 @@
       },
       {
         "codigoItem": 3,
-        "name": "Camiseta",
+        "name": "Camiseta 3",
         "price": 300,
         "quantidade": 1,
         "categoria": "camiseta",
@@ -29,7 +29,7 @@
       },
       {
         "codigoItem": 4,
-        "name": "Camiseta",
+        "name": "Camiseta 4",
         "price": 400,
         "quantidade": 1,
         "categoria": "camiseta",

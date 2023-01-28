@@ -1,11 +1,24 @@
+<ng-template #content let-c="close" let-d="dismiss">
+	<div class="modal-header bg-success">
+		<h4 class="modal-title text-light" id="modal-basic-title">Success</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<p>Product successfully added to cart!</p>
+	</div>
+</ng-template>
+
 <div class="container col-md-10"> 
     <div class="row align-items-center">
-        <div class="card col-md-3" *ngFor="let product of produtos" style="margin: 35px;">
+        <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''"
+	    >{{ successMessage }}
+        </ngb-alert>
+        <div class="card col-md-3" *ngFor="let product of mostraProdutos" style="margin: 35px;">
             <img src="{{product.imagens}}" class="img-thumbnail" width="200px" height="200px" routerLink="/product">
             <div class="card-body">
                 <a routerLink="/product"><h5 class="card-title">{{product.name}}</h5></a>
                 <p class="card-text fw-bolder" name="price">R$ {{product.price}} </p>
-                <button type="button" class="btn btn-outline-success col-md-12">
+                <button type="button" (click)="open(content)" class="btn btn-outline-success col-md-12" (click)="addItem(product)">
                     Add to Cart 
                 </button>
             </div>
